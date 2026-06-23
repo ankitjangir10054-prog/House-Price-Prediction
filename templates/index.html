@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>AI House Price Prediction</title>
+
+    <link rel="icon" href="{{ url_for('static', filename='favicon.ico') }}">
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap"
+          rel="stylesheet">
+
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <nav>
+        <div class="logo">
+            🏠 AI House Price Prediction
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+
+        <div class="hero-content">
+
+            <h1>Predict Your Dream House Price</h1>
+
+            <p class="tagline">
+              Smart Predictions • Better Investments • Future Ready
+            </p>
+
+        </div>
+
+    </section>
+
+    <section class="stats">
+
+    <div class="stat-card">
+
+        <h2>🤖</h2>
+
+        <h3>CatBoost</h3>
+
+        <p>AI Model</p>
+
+    </div>
+
+    <div class="stat-card">
+
+        <h2>📈</h2>
+
+        <h3>96.67%</h3>
+
+        <p>Accuracy</p>
+
+    </div>
+
+    <div class="stat-card">
+
+        <h2>⚡</h2>
+
+        <h3>&lt; 1 Sec</h3>
+
+        <p>Prediction Time</p>
+
+    </div>
+
+    </section>
+
+    <!-- Prediction Form -->
+    <div class="container">
+
+        <div class="card">
+
+            <h2>Enter House Details</h2>
+
+            <form action="/predict" method="POST">
+
+                <div class="grid">
+
+                    <div class="input-group">
+                        <label>Area (Sq Ft)</label>
+                        <input type="number" name="Area_SqFt" placeholder="Enter Area" required>
+                    </div>
+
+                    <div class="input-group">
+                        <label>Rooms</label>
+                        <select name="Rooms">
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                        </select>
+                    </div>
+
+                    <div class="input-group">
+                        <label>Build Year</label>
+                        <input type="number" name="Build_Year" placeholder="2026" required>
+                    </div>
+
+                    <div class="input-group">
+                        <label>Location</label>
+                        <select name="Location">
+                            <option>Noida</option>
+                            <option>Kanpur</option>
+                            <option>Prayagraj</option>
+                            <option>Delhi</option>
+                            <option>Lucknow</option>
+                            <option>Jaipur</option>
+                            <option>Indore</option>
+                            <option>Gurugram</option>
+                        </select>
+                    </div>
+
+                    <div class="input-group">
+                        <label>Street Type</label>
+                        <select name="Street_Type">
+                            <option>Highway Facing</option>
+                            <option>Residential Lane</option>
+                            <option>Main Road</option>
+                            <option>Corner Plot</option>
+                            <option>Gated Society</option>
+                        </select>
+                    </div>
+
+                    <div class="input-group">
+                        <label>Furnishing</label>
+                        <select name="Furnishing">
+                            <option>Furnished</option>
+                            <option>Semi Furnished</option>
+                            <option>Not Furnished</option>
+                        </select>
+                    </div>
+
+                    <div class="input-group">
+                        <label>Property Type</label>
+                        <select name="Property_Type">
+                            <option>Apartment</option>
+                            <option>Independent House</option>
+                            <option>Duplex</option>
+                            <option>Villa</option>
+                        </select>
+                    </div>
+
+                    <div class="input-group">
+                        <label>Has Pool</label>
+                        <select name="Has_Pool">
+                            <option>Yes</option>
+                            <option>No</option>
+                        </select>
+                    </div>
+
+                </div>
+
+                <button type="submit">
+                 🚀 Predict House Price
+                 </button>
+            </form>
+
+            {% if prediction_text %}
+
+            <div class="prediction-card">
+
+                <h2>Predicted Price</h2>
+
+                <h1>{{ prediction_text }}</h1>
+
+            </div>
+
+            {% endif %}
+
+        </div>
+
+    </div>
+
+    <!-- Footer -->
+
+    <footer>
+
+        <h3>🏠 AI House Price Prediction</h3>
+
+        <p><strong>Developed by Ankit Kumar</strong></p>
+
+        <p>© 2026 All Rights Reserved</p>
+
+    </footer>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+
+</body>

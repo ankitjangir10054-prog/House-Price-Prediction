@@ -1,0 +1,661 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+
+    margin:0;
+    padding:0;
+
+    font-family:'Poppins',sans-serif;
+
+    background:
+    linear-gradient(
+        rgba(0,0,0,0.45),
+        rgba(0,0,0,0.45)
+    ),
+    url("https://lejdiprifti.com/wp-content/uploads/2024/01/house-price-prediction-scaled.webp");
+
+    background-size:cover;
+
+    background-position:center;
+
+    background-repeat:no-repeat;
+
+    background-attachment:fixed;
+
+    min-height:100vh;
+
+}
+@keyframes bgAnimation{
+
+    0%{
+        background-position:0% 50%;
+    }
+
+    50%{
+        background-position:100% 50%;
+    }
+
+    100%{
+        background-position:0% 50%;
+    }
+
+}
+
+/* Navbar */
+
+nav{
+
+    width:100%;
+
+    height:80px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    background:rgba(255,255,255,.08);
+
+    backdrop-filter:blur(12px);
+
+    box-shadow:0 8px 25px rgba(0,0,0,.2);
+
+}
+
+.logo{
+
+    color:white;
+
+    font-size:30px;
+
+    font-weight:700;
+
+}
+
+/* Hero */
+
+.hero{
+
+    text-align:center;
+
+    color:rgb(249, 245, 250);
+
+    padding:50px;
+
+}
+
+.hero h1{
+
+    font-size:55px;
+
+    margin-bottom:15px;
+
+}
+
+.hero p{
+
+    font-size:20px;
+
+    opacity:.9;
+
+}
+
+/* Container */
+
+.container{
+
+    display:flex;
+
+    justify-content:center;
+
+    padding:30px;
+
+}
+
+/* Card */
+
+.card{
+    animation: fadeIn 0.8s ease;
+}
+
+@keyframes fadeIn{
+    from{
+        opacity:0;
+        transform:translateY(30px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+@keyframes fade{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(50px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+.card h2{
+
+    color:white;
+
+    text-align:center;
+
+    margin-bottom:25px;
+
+}
+
+/* Grid */
+
+.grid{
+
+    display:grid;
+
+    grid-template-columns:1fr 1fr;
+
+    gap:20px;
+
+}
+
+.input-group{
+
+    display:flex;
+
+    flex-direction:column;
+
+}
+
+label{
+
+    color:white;
+
+    margin-bottom:8px;
+
+    font-weight:600;
+
+}
+
+input,select{
+
+    padding:15px;
+
+    border:none;
+
+    border-radius:12px;
+
+    outline:none;
+
+    font-size:16px;
+
+}
+
+input:focus{
+
+    transform:scale(1.02);
+
+}
+
+select:focus{
+
+    transform:scale(1.02);
+
+}
+
+/* Button */
+button{
+
+    width:100%;
+
+    padding:18px;
+
+    border:none;
+
+    border-radius:18px;
+
+    font-size:20px;
+
+    font-weight:700;
+
+    color:white;
+
+    background:linear-gradient(135deg,#6a11cb,#2575fc);
+
+    cursor:pointer;
+
+    box-shadow:
+        0 10px 25px rgba(37,117,252,0.5);
+
+    transition:0.3s;
+
+}
+
+button:hover{
+
+    transform:translateY(-6px) scale(1.02);
+
+    box-shadow:
+        0 18px 40px rgba(37,117,252,0.6);
+
+}
+
+button:active{
+
+    transform:translateY(2px);
+
+}
+
+@keyframes buttonMove{
+
+    0%{
+
+        background-position:0% 50%;
+
+    }
+
+    50%{
+
+        background-position:100% 50%;
+
+    }
+
+    100%{
+
+        background-position:0% 50%;
+
+    }
+
+}
+
+/* Result */
+
+.prediction-card{
+
+    margin-top:30px;
+
+    background:white;
+
+    border-radius:20px;
+
+    padding:25px;
+
+    text-align:center;
+
+    animation:zoom .8s;
+
+}
+
+.prediction-card h2{
+
+    color:#444;
+
+}
+
+.prediction-card h1{
+
+    color:#00b894;
+
+    font-size:45px;
+
+    margin-top:15px;
+
+}
+
+@keyframes zoom{
+
+    from{
+
+        transform:scale(.6);
+
+        opacity:0;
+
+    }
+
+    to{
+
+        transform:scale(1);
+
+        opacity:1;
+
+    }
+
+}
+
+/* Feature Cards */
+
+.features{
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:30px;
+
+    flex-wrap:wrap;
+
+    padding:50px;
+
+}
+
+.feature{
+
+    width:280px;
+
+    background:rgba(255,255,255,.12);
+
+    backdrop-filter:blur(15px);
+
+    border-radius:20px;
+
+    padding:25px;
+
+    color:white;
+
+    text-align:center;
+
+    transition:.4s;
+
+}
+
+.feature:hover{
+
+    transform:translateY(-10px);
+
+}
+
+.feature h2{
+
+    margin-bottom:15px;
+
+}
+
+/* Footer */
+
+footer{
+
+    text-align:center;
+
+    color:white;
+
+    padding:30px;
+
+    background:rgba(0,0,0,.2);
+
+    margin-top:30px;
+
+}
+
+/* Mobile */
+
+@media(max-width:768px){
+
+.grid{
+
+grid-template-columns:1fr;
+
+}
+
+.hero h1{
+
+font-size:35px;
+
+}
+
+.card{
+
+width:100%;
+
+}
+
+.features{
+
+flex-direction:column;
+
+align-items:center;
+
+}
+
+/* Navbar */
+
+.navbar{
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:center;
+
+padding:20px 60px;
+
+background:rgba(255,255,255,.12);
+
+backdrop-filter:blur(12px);
+
+}
+
+.logo{
+
+color:white;
+
+font-size:30px;
+
+font-weight:bold;
+
+}
+
+.nav-links{
+
+display:flex;
+
+list-style:none;
+
+gap:30px;
+
+}
+
+.nav-links a{
+
+text-decoration:none;
+
+color:white;
+
+font-size:18px;
+
+transition:.3s;
+
+}
+
+.nav-links a:hover{
+
+color:#00f2fe;
+
+}
+
+/* Hero */
+
+.hero{
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:center;
+
+padding:60px;
+
+min-height:80vh;
+
+}
+
+.hero-left{
+
+width:50%;
+
+}
+
+.hero-left h1{
+
+font-size:60px;
+
+color:white;
+
+margin-bottom:20px;
+
+}
+
+.hero-left p{
+
+font-size:22px;
+
+color:white;
+
+line-height:1.8;
+
+}
+
+.hero-btn{
+
+margin-top:30px;
+
+padding:18px 40px;
+
+font-size:20px;
+
+border:none;
+
+border-radius:50px;
+
+background:linear-gradient(90deg,#00f2fe,#4facfe);
+
+color:white;
+
+cursor:pointer;
+
+transition:.3s;
+
+}
+
+.hero-btn:hover{
+
+transform:scale(1.05);
+
+}
+
+.hero-right{
+
+width:45%;
+
+text-align:center;
+
+}
+
+.hero-right img{
+
+width:100%;
+
+max-width:500px;
+
+animation:float 4s ease-in-out infinite;
+
+}
+
+@keyframes float{
+
+0%{
+
+transform:translateY(0px);
+
+}
+
+50%{
+
+transform:translateY(-15px);
+
+}
+
+100%{
+
+transform:translateY(0px);
+
+}
+
+}
+}
+.stats{
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:30px;
+
+    margin:50px auto;
+
+    flex-wrap:wrap;
+
+}
+
+.stat-card{
+
+    width:220px;
+
+    padding:25px;
+
+    border-radius:20px;
+
+    text-align:center;
+
+    background:rgba(255,255,255,.15);
+
+    backdrop-filter:blur(15px);
+
+    color:white;
+
+    transition:.3s;
+
+    box-shadow:0 10px 30px rgba(0,0,0,.25);
+
+}
+
+.stat-card:hover{
+
+    transform:translateY(-10px);
+
+}
+
+.stat-card h2{
+
+    font-size:45px;
+
+    margin-bottom:10px;
+
+}
+
+.stat-card h3{
+
+    font-size:28px;
+
+    margin-bottom:10px;
+
+}
